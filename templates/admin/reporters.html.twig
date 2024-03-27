@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reporters{% endblock %}
+
+{% block body %}
+    {% include "admin/adminlayout.html.twig" %}
+    <h1>Reporters</h1>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Total Views</th>
+        </tr>
+        {% for reporter in reporters %}
+            <tr>
+                <td>{{ reporter.firstName }}</td>
+                <td>{{ reporter.lastName }}</td>
+                <td>{{ reporter.email }}</td>
+                <td>{{ reporter.views }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

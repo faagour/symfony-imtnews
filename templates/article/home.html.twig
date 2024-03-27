@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1 class="text-3xl font-bold text-teal-300 underline">Welcome to the Home Page! ✅</h1>
+
+    {% if articles is not empty %}
+        <h2>Top 6 Articles:</h2>
+        {% for article in articles %}
+            <div>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.content }} with {{article.visitors}} visitors</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No articles found.</p>
+    {% endif %}
+</div>
+{% endblock %}

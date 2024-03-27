@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}My Website{% endblock %}</title>
+<style>
+/* Styling for the navbar */
+.nav {
+background-color: #3db6d6; /* Blue background */
+padding: 10px;
+text-align: center;
+}
+
+.nav a {
+color: #fff; /* White text color */
+text-decoration: none;
+padding: 10px 20px;
+margin: 0 5px;
+border-radius: 5px;
+transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav a:hover {
+background-color: #555; /* Darker gray-blue on hover */
+}
+
+.nav a.active {
+background-color: #007bff; /* Blue color for active link */
+}
+
+/* Styling for the register and login links */
+.register-login {
+color: #666; /* Grey text color */
+}
+
+/* Styling for the header */
+.header {
+background-color: #fff; /* White background color for header */
+padding: 10px;
+text-align: center;
+color: #333; /* Dark text color */
+display: flex;
+align-items: center; /* Center items vertically */
+}
+
+/* Styling for the search bar and login/sign-in links */
+.search-bar {
+margin-right: auto; /* Pushes search bar to the right */
+}
+
+.login-links {
+margin-left: auto; /* Pushes login links to the right */
+}
+
+/* Styling for the logo */
+.logo {
+margin-right: 20px; /* Add margin to the right of the logo */
+}
+</style>
+</head>
+<body>
+<!-- Header section with logo, search bar, and login/sign-in links -->
+<div class="header">
+<img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
+<div class="search-bar">
+<input type="text" placeholder="Search...">
+<button>Search</button>
+</div>
+<div class="login-links">
+<a href="SignIn" class="register-login">Register</a>
+<a href="Login" class="register-login">Login</a>
+</div>
+</div>
+
+<!-- Navbar section -->
+<div class="nav">
+<a href="#" onclick="showContent('home', '/')">Home</a>
+<a href="articles" onclick="showContent('articles', '/articles')">Articles</a>
+<a href="contact" onclick="showContent('contact', '/contact')">Contact</a>
+</div>
+
+<!-- Content section -->
+<div class="content">
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>

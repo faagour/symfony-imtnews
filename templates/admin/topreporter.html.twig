@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Top Reporter{% endblock %}
+
+{% block body %}
+    {% include "admin/adminlayout.html.twig" %}
+    <h1>Top Reporter</h1>
+    {% if topreporter is not null %}
+        <p>First Name: {{ topreporter.firstName }}</p>
+        <p>Last Name: {{ topreporter.lastName }}</p>
+        <p>Email: {{ topreporter.email }}</p>
+        <p>Total Views: {{ topreporter.views }}</p>
+    {% else %}
+        <p>No top reporter found.</p>
+    {% endif %}
+{% endblock %}

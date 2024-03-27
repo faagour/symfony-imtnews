@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    {% include "admin/adminlayout.html.twig" %}
+    <h1>Top Articles</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
+                <p>Visitors: {{ article.visitors }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
